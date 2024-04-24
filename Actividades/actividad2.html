@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actividad 2</title>
+</head>
+
+<body>
+    <h1>Actividad 2</h1>
+    <p>Escribe con un programa que solicite dos números y muestre el mayor
+        en la consola.</p>
+
+    <script>
+        let num1 = prompt("Di un numero");
+        let num2 = prompt("Di otro numero");
+
+        num1 = parseInt(num1);
+        num2 = parseInt(num2);
+
+        let mayor = 0;
+
+        if (num1 > num2) {
+            mayor = num1;
+        } else if (num1 < num2) {
+            mayor = num2;
+        }
+
+        console.log("Tus numeros son " + num1 + ", y " + num2 + ". El mayor de los dos es: " + mayor);
+
+    </script>
+</body>
+
+</html>
