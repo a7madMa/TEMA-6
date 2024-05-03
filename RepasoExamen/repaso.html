@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Repaso JavaScript</title>
+    <style>
+        /* Estilos CSS */
+        #miDiv {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <!-- Elementos HTML -->
+    <div id="miDiv">Texto de ejemplo</div>
+    <p class="parrafo">Párrafo de ejemplo</p>
+    <button id="miBoton">Haz clic aquí</button>
+
+    <!-- Archivo JavaScript -->
+    <script>
+        // Variables y tipos de datos
+        let texto = "Hola, mundo!";
+        let numero = 42;
+        let numeroGrande = 9007199254740991n;
+        let esVerdadero = true;
+        let variableIndefinida;
+        let objetoNulo = null;
+        let miObjeto = { nombre: "Juan", edad: 30 };
+
+        // Función
+        function producto(num1, num2) {
+            return num1 * num2;
+        }
+        console.log(producto(10, 12));
+
+        // Bucles
+        let miObjeto2 = { a: 1, b: 2, c: 3 };
+        for (let propiedad in miObjeto2) {
+            console.log(propiedad);
+        }
+        let miArray = [10, 20, 30];
+        for (let elemento of miArray) {
+            console.log(elemento);
+        }
+
+        // Métodos de iteración de arrays
+        let miArray2 = [1, 2, 3];
+        miArray2.forEach(function(elemento) {
+            console.log(elemento);
+        });
+
+        // Acceso al DOM
+        let elementoById = document.getElementById("miDiv");
+        let elementosByTagName = document.getElementsByTagName("p");
+        let elementosByClassName = document.getElementsByClassName("parrafo");
+        let elementoQuerySelector = document.querySelector("#miDiv");
+        let elementosQuerySelectorAll = document.querySelectorAll("p");
+
+        // Modificación del DOM
+        document.getElementById("miDiv").innerHTML = "Nuevo texto";
+        document.getElementById("miDiv").style.color = "blue";
+
+        // Eventos
+        document.getElementById("miBoton").onclick = function() {
+            console.log("¡Botón clickeado!");
+        };
+    </script>
+</body>
+</html>
