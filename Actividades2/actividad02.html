@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -6,9 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Actividad 2</title>
     <style>
-        div {
+        button {
             display: inline-block;
             margin-right: 20px;
+            border: none;
+            text-align: center;
         }
 
         a {
@@ -19,7 +22,6 @@
         .wiki {
             background-color: rgb(166, 239, 255);
             padding: 10px 40px 10px 40px;
-
         }
 
         .green {
@@ -44,9 +46,9 @@
     <h1>Elegir destino del enlace</h1>
     <p>Pulsa uno de estos tres colores para elegir el destino del link que aparece más abajo. </p>
 
-    <div class="wiki">Wikipedia</div>
-    <div class="green">Greenpeace</div>
-    <div class="roja">Cruz Roja</div>
+    <button class="wiki">Wikipedia</button>
+    <button class="green">Greenpeace</button>
+    <button class="roja">Cruz Roja</button>
 
     <p>Pulsa el siguiente link pra dirigirte a la web elegida:</p>
 
@@ -55,20 +57,30 @@
     <script>
         "use strict"
 
+<<<<<<< HEAD
         document.querySelector('.wiki').onclick = function ()  {
             document.getElementById('seleccion').textContent = 'Ir a Wikipedia';
             document.getElementById('seleccion').href = 'https://www.wikipedia.org/';
         };
+=======
+        const buttons = document.querySelectorAll('button');
+        const linkElement = document.getElementById('seleccion');
+>>>>>>> 5b37500bb691ead4352341b46d0345cb01782765
 
-        document.querySelector('.green').onclick = function () {
-            document.getElementById('seleccion').textContent = 'Ir a Greenpeace';
-            document.getElementById('seleccion').href = 'https://www.greenpeace.org/';
-        };
+        buttons.forEach(button => {
+            button.onclick = function () {
+                let text = this.textContent;
+                linkElement.textContent = 'Ir a ' + text;
 
-        document.querySelector('.roja').onclick = function () {
-            document.getElementById('seleccion').textContent = 'Ir a Cruz Roja';
-            document.getElementById('seleccion').href = 'https://www.cruzroja.es/';
-        };
+                if (text == 'Wikipedia') {
+                    linkElement.href = 'https://www.wikipedia.org/';
+                } else if (text == 'Greenpeace') {
+                    linkElement.href = 'https://www.greenpeace.org/';
+                } else if (text == 'Cruz Roja') {
+                    linkElement.href = 'https://www.cruzroja.es/';
+                }
+            }
+        });
     </script>
 </body>
 
